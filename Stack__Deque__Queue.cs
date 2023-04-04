@@ -81,10 +81,10 @@ namespace Stack__Deque__Queue
         }
     }
 
-    class Deque
+    class Deque  //double-ended queue
     {
         int[] arr_deque = new int[0];
-        public void AddFirst(int num)
+        public void AddFirst(int num)  //додати елемент на початок
         {
             int[] new_arr = new int[arr_deque.Length+1];
             new_arr[0] = num;
@@ -96,12 +96,12 @@ namespace Stack__Deque__Queue
             Array.Resize(ref arr_deque, arr_deque.Length + 1);
             Array.Copy(new_arr, arr_deque, arr_deque.Length);
         }
-        public void AddLast(int num)
+        public void AddLast(int num)  //додати елемент в кінець
         {
             Array.Resize(ref arr_deque, arr_deque.Length + 1);
             arr_deque[arr_deque.Length - 1] = num;
         }
-        public int RemoveFirst()
+        public int RemoveFirst()   //видалити перший елемент
         {
             int remove_elem = arr_deque[0];
             int[] new_arr = new int[arr_deque.Length];
@@ -119,13 +119,13 @@ namespace Stack__Deque__Queue
             Array.Resize(ref arr_deque, arr_deque.Length - 1);
             return remove_elem;
         }
-        public int RemoveLast()
+        public int RemoveLast()  //видалити останній елемент
         {
             int remove_elem = arr_deque[arr_deque.Length - 1];
             Array.Resize(ref arr_deque, arr_deque.Length - 1);
             return remove_elem;
         }
-        public bool Contains(int num)
+        public bool Contains(int num)  //перевірка на наявність елемента 
         {
             for(int i = 0; i < arr_deque.Length; i++)
             {
